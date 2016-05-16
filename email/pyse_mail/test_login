@@ -1,0 +1,71 @@
+#!/user/bin/env python
+# -*- coding:utf-8 -*-
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import NoSuchElementException
+import time,unittest,re
+from public import login
+from public import send
+
+
+class test_Login(unittest.TestCase):
+
+    def setUp(self):
+        self.driver = webdriver.Firefox()
+        self.driver.implicitly_wait(30)
+        self.base_url = "http://mail.163.com/"
+        self.verificationErrors = []
+        self.accept_next_alert = True
+
+    def test_send(self):
+        driver = self.driver
+        driver.get(self.base_url)
+
+        #登录
+        login.Login(self)
+        #验证用户
+        name = driver.find_element_by_id("spnUid").text
+        print name
+        self.assertEqual("reblues@163.com",name)
+
+        #发送邮件
+        send.sendMail(self)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #退出
+        login.Logout(self)
+
+    def tearDown(self):
+        self.driver.quit()
+        self.assertEqual([],self.verificationErrors)
+
+
+if __name__ == "__main__":
+    unittest.main
+
+
+
+
+
+
+
+
+
+
+
