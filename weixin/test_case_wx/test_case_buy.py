@@ -6,6 +6,7 @@ from appium import webdriver
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 from public import search
+from public import login
 
 
 class case_Search(unittest.TestCase):
@@ -27,13 +28,19 @@ class case_Search(unittest.TestCase):
         self.driver.implicitly_wait(30)
 
 
+
     def tearDown(self):
         print("clean up the settings...")
         self.driver.quit()
 
 
     def test_search(self):
-        search.searchAddress(self)
+        login.Login(self)
+        #search.searchAddress(self)
+        #search.searchGoods(self)
+
+
+        login.Logout(self)
 
 
 
