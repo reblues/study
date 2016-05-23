@@ -7,6 +7,7 @@ from selenium.webdriver.common.keys import Keys
 from time import sleep
 from public import search
 from public import login
+from public import buy
 
 
 class case_Search(unittest.TestCase):
@@ -35,12 +36,22 @@ class case_Search(unittest.TestCase):
 
 
     def test_search(self):
+        self.driver.switch_to.context('WEBVIEW_1')
+        #login.Login(self)
+        #sleep(3)
+        search.searchAddress(self)
+        sleep(3)
+        search.searchGoods(self)
+        sleep(3)
+
+        self.driver.find_element_by_xpath("html/body/ion-nav-view/div/ion-tabs/div/a[4]").click()
+        self.driver.find_element_by_xpath(".//*[@id='btn3']/div/button").click()
+
         login.Login(self)
-        #search.searchAddress(self)
-        #search.searchGoods(self)
-
-
-        login.Logout(self)
+        sleep(3)
+        buy.cartBuy(self)
+        sleep(3)
+        #login.Logout(self)
 
 
 

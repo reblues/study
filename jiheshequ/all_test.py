@@ -6,7 +6,7 @@ import HTMLTestRunner
 from test_case.data_read import readExcle
 
 #导入case
-from test_case import case_login, case_search
+from test_case import case_login, case_search, case_send
 
 
 
@@ -14,7 +14,8 @@ from test_case import case_login, case_search
 #将用例组装数组
 allCaseNames = [
     case_login.case_Login,
-    case_search.case_Search
+    case_search.case_Search,
+    case_send.case_Send
 
 ]
 
@@ -26,11 +27,13 @@ testunit = unittest.TestSuite()
 #循环读取数组中的用例
 strCases = readExcle()
 lenth = len(strCases)
+#print lenth
+#print len(allCaseNames)
 for case in allCaseNames:
     strCaseName = str(case).split('\'')[1]
     for i in range(lenth):
         if strCases[i] == strCaseName:
-            print i
+            print strCases[i]
             testunit.addTest(unittest.makeSuite(case))
 
 
@@ -39,7 +42,7 @@ now = time.strftime('%Y-%m-%d-%H_%M_%S', time.localtime(time.time()))
 
 
 #定义报告存放路径
-filename = 'E:\\study\\jiheshequ\\result\\' + now + 'result.html'
+filename = 'E:\\github\\study\\jiheshequ\\result\\' + now + 'result.html'
 fp = file(filename, 'wb')
 
 

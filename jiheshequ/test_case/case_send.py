@@ -3,11 +3,10 @@
 import unittest
 from appium import webdriver
 from time import sleep
-from public import login
-from public import search
 
 
-class case_Login(unittest.TestCase):
+
+class case_Send(unittest.TestCase):
 
     def setUp(self):
         print("set up env for android testing...")
@@ -29,17 +28,10 @@ class case_Login(unittest.TestCase):
         print("clean up the settings...")
         self.driver.quit()
 
-    def test_login(self):
+    def test_send(self):
         u'''登陆登出'''
         sleep(10)
-        login.Login(self)
-        search.searchAddress(self)
-        search.searchGoods(self)
 
-        login.Logout(self)
-
-    def test_test(self):
-        print 'pass'
 
 
 if __name__ == '__main__':

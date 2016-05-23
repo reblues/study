@@ -11,7 +11,6 @@ def objectHome(self):
     self.homeKey = self.driver.find_element_by_xpath('html/body/ion-nav-view/div/ion-tabs/div/a[1]')
     self.addressKey = self.driver.find_element_by_xpath('html/body/ion-nav-view/div/ion-tabs/ion-nav-view/div/ion-view/div[1]/div[1]/span')
     self.searchGoods = self.driver.find_element_by_xpath('html/body/ion-nav-view/div/ion-tabs/div/a[2]/i')
-    self.loginKey = self.driver.find_element_by_xpath('html/body/ion-nav-view/div/ion-tabs/div/a[5]')
 
 
 def objectAddress(self):
@@ -21,7 +20,10 @@ def objectAddress(self):
 def addressAccept(self):
     self.allAddress = self.driver.find_elements_by_class_name('lister')
 
-
+def homeButton(self):
+    self.buttonHomeKey = self.driver.find_element_by_xpath('html/body/ion-nav-view/div/ion-tabs/div/a[1]')
+    self.cartKey = self.driver.find_element_by_xpath('html/body/ion-nav-view/div/ion-tabs/div/a[4]')
+    self.loginKey = self.driver.find_element_by_xpath('html/body/ion-nav-view/div/ion-tabs/div/a[5]')
 
 
 
