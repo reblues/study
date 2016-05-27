@@ -41,6 +41,6 @@ def searchData(self):
     self.address = u"下梅林"
     self.addressAccept = u'福田区福田梅山路与梅林路交汇处'
     self.goods = u'面'
-    self.goodsAccept = u'康师傅酸菜牛肉面550ML*12'
+    self.goodsAccept = u'康师傅酸菜牛肉面550ML*12[美宜家便利店]'
     self.goodsName = 'com.geometry:id/productName'
     self.goodsButton ='com.geometry:id/addToCartBtn'

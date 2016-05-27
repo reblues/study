@@ -1,5 +1,8 @@
-#!/user/bin/env python
-# -*- coding:utf-8 -*-
+#coding:utf-8
+'''
+
+'''
+
 import os
 import time
 from test_case.orderObject.searchObject import homeObject
@@ -10,7 +13,8 @@ from test_case.orderObject.searchObject import GoodsObject
 from test_case.orderObject.searchObject import cart
 from test_case.orderObject.searchObject import searchData
 from orderCommit import forSearch
-from selenium.webdriver.common.keys import Keys
+
+
 
 
 def searchAddress(self):
@@ -55,13 +59,27 @@ def searchGoods(self):
     time.sleep(3)
 
     #添加要选择的商品
-    GoodsObject(self)
-    goods = self.goodAccept
-    for good in goods:
-        if good.find_element_by_id(self.goodsName).text == self.goodsAccept:
-            good.find_element_by_id(self.goodsButton).click()
-            print good.find_element_by_id(self.goodsName).text + ' add sucess'
-            break
+    self.func(self)
+
+
+
+    def func(self):
+        GoodsObject(self)
+        goods = self.goodAccept
+        print len(goods)
+        for good in goods:
+            print good.find_element_by_id(self.goodsName).text
+            if good.find_element_by_id(self.goodsName).text == self.goodsAccept:
+                print good.find_element_by_id(self.goodsName).text
+                good.find_element_by_id(self.goodsButton).click()
+                print good.find_element_by_id(self.goodsName).text + ' add sucess'
+                return
+        print "no goods"
+        self.driver.swipe(500, 1000, 500, 200, 800)
+        func(self)
+
+
+
     time.sleep(3)
     #进入购物车
     cart(self)

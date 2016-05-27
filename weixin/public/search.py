@@ -72,11 +72,6 @@ def searchGoods(self):
     sleep(5)
     '''
     self.driver.find_element_by_xpath("html/body/ion-nav-view/div/ion-tabs/ion-nav-view[2]/div/ion-view/div[2]/ion-content/div/div[2]/ul/li[4]/div/div[2]/div[3]/div[2]/div/div/span/em").click()
-
-
-
-
-
     '''
     objectGoods.objectGood(self)
     print len(self.goodChoose)

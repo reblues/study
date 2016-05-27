@@ -19,4 +19,4 @@ def objectGood(self):
 def allData(self):
     self.goodList1 = u'休闲食品'
     self.goodList2 = u'休闲零食'
-    self.goodAccept = u'傻二哥黑米锅巴(香辣味)100G'
+    self.goodAccept = u'傻二哥粗粮锅巴(麻辣味)100G'

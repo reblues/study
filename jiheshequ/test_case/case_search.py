@@ -35,6 +35,7 @@ class case_Search(unittest.TestCase):
         sleep(10)
         search.searchAddress(self)
         search.searchGoods(self)
+        #self.driver.swipe(500, 1000, 500, 200, 800)
 
         '''
         self.driver.find_element_by_id('com.geometry:id/cart_tab').click()

@@ -48,7 +48,7 @@ def cartBuy(self):
 
     #检查订单
     objectBuy.cheakout(self)
-    self.cheakOrder.click()s
+    self.cheakOrder.click()
     cheak.cheakMean(self.cheakName, self.addName)
     cheak.cheakMean(self.cheakTel, self.addTel)
     cheak.cheakMean(self.cheakAddress, self.allAddress)
